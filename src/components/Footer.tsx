@@ -1,8 +1,8 @@
-import React from "react";
-import Link from "next/link";
+import React from "react"
+import Link from "next/link"
 
 export default function Footer() {
-  const currentYear = 2025;
+  const currentYear = 2025
   
   return (
     <footer className="bg-gray-900 text-white">
@@ -75,5 +75,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

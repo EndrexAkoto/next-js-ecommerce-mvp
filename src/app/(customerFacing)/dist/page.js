@@ -54,9 +54,8 @@ var button_1 = require("@/components/ui/button");
 var ProductCard_1 = require("@/components/ProductCard");
 var db_1 = require("@/db/db");
 var cache_1 = require("@/lib/cache");
-// import Footer from "@/components/Footer"; // Ensure the path is correct or comment out if not needed
-// import HeroBanner from "@/components/HeroBanner";
-// import FeaturedProducts from "@/components/FeaturedProducts";
+var HeroBanner_1 = require("@/components/HeroBanner");
+var FeaturedProducts_1 = require("@/components/FeaturedProducts");
 // Cache popular products
 var getMostPopularProducts = cache_1.cache(function () {
     return db_1["default"].product.findMany({
@@ -85,11 +84,11 @@ var getFeaturedProducts = cache_1.cache(function () {
 }, ["/", "getFeaturedProducts"]);
 function HomePage() {
     return (React.createElement("main", { className: "space-y-12 pb-8" },
-        React.createElement(HeroBanner, null),
+        React.createElement(HeroBanner_1["default"], null),
         React.createElement("section", { className: "container px-4 py-8" },
             React.createElement("h2", { className: "text-3xl font-bold mb-8 text-center" }, "Featured Products"),
             React.createElement(react_1.Suspense, { fallback: React.createElement("div", { className: "grid grid-cols-1 md:grid-cols-3 gap-8" }, Array(3).fill(0).map(function (_, i) { return React.createElement("div", { key: i, className: "bg-gray-100 rounded-lg h-96 animate-pulse" }); })) },
-                React.createElement(FeaturedProducts, { productsFetcher: getFeaturedProducts }))),
+                React.createElement(FeaturedProducts_1["default"], { productsFetcher: getFeaturedProducts }))),
         React.createElement(ProductGridSection, { title: "Most Popular", description: "Our customers' favorites this season", productsFetcher: getMostPopularProducts }),
         React.createElement(ProductGridSection, { title: "Newest Arrivals", description: "Fresh products just added to our store", productsFetcher: getNewestProducts }),
         React.createElement("section", { className: "container mx-auto px-4" },

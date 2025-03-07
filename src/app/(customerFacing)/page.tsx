@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { ProductCard, ProductCardSkeleton } from "@/components/ProductCard";
 import db from "@/db/db";
 import { cache } from "@/lib/cache";
-// import Footer from "@/components/Footer"; // Ensure the path is correct or comment out if not needed
-// import HeroBanner from "@/components/HeroBanner";
-// import FeaturedProducts from "@/components/FeaturedProducts";
+import Footer from "@/components/Footer";
+import HeroBanner from "@/components/HeroBanner";
+import FeaturedProducts from "@/components/FeaturedProducts";
 
 // Cache popular products
 const getMostPopularProducts = cache(
